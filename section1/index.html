@@ -1,1 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>任务一</title>
+    <style>
+        #outer{text-align:center;}
+        #box{width: 100px;height: 100px;background-color: black;margin: 10px auto;display:block;}
+    </style>
+    <script>
+        var changeStyle = function (elem,attr,value){
+            elem.style[attr] = value
+        };
 
+        window.onload = function(){
+            var oBut = document.getElementsByTagName("input");
+            var oDiv = document.getElementById("box");
+            var oAtt = ["width","height","background","display","display"];
+            var oVal = ["200px","200px","red","none","block"];
+
+            for (var i = 0; i < oBut.length; i++){
+                oBut[i].index = i;
+                oBut[i].onclick = function(){
+                    this.index == oBut.length-1 && (oDiv.style.cssText="");
+                    changeStyle(oDiv,oAtt[this.index],oVal[this.index])
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+   <div id="outer">
+       <input type="button" value="变宽"/>
+       <input type="button" value="变高"/>
+       <input type="button" value="变色"/>
+       <input type="button" value="隐藏"/>
+       <input type="button" value="重置"/>
+       <div id="box"></div>
+   </div>
+</body>
+</html>
