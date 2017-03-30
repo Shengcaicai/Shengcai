@@ -1,1 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数接受参数并弹出</title>
+    <style>
+        body{margin:0;padding:0;}
+        #outer{margin:0 auto;text-align: center;}
+        button{cursor:pointer;}
+    </style>
+    <script>
+         var myFc=function(a,b){
+             alert(a.value);
+             alert(b.value);
+         };
 
+
+         window.onload=function(){
+             var oBut=document.getElementsByTagName("button")[0];
+             var oInp=document.getElementsByTagName("input");
+
+                 oBut.onclick = function () {
+                     myFc(oInp[0], oInp[1])
+                 }
+             };
+    </script>
+</head>
+<body>
+  <div id="outer">
+      <p><input type="text" value="北京市"></p>
+      <p><input type="text" value="朝阳区"></p>
+      <p><button>传参</button></p>
+  </div>
+
+
+</body>
+</html>
