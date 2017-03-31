@@ -1,1 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>求出数组和</title>
+    <style>
+        body,input,button{margin:0;padding:0;}
+        body{font:12px/1.5 Tahoma;}
+        #outer{margin:10px auto;width:500px;}
+
+        input{width:220px;padding:3px;margin-right:10px;}
+        span{color:darkgrey;}
+        .sum{color:red;font-size:30px;}
+    </style>
+    <script>
+        window.onload = function(){
+             var oBut = document.getElementsByTagName("button")[0];
+             var oStr = document.getElementsByTagName("strong")[0];
+             var oInp = document.getElementsByTagName("input")[0];
+
+                oInp.onkeyup = function(){
+                    this.value = this.value.replace(/[^(\d)|(,)]/,"")
+                }
+                oBut.onclick = function(){
+                    var sum = 0;
+                    var oInp = document.getElementsByTagName("input")[0].value.split(",");
+                    for( var i in oInp){
+                        sum += parseInt(oInp[i]);
+                    }
+                    oStr.innerHTML = sum
+                }
+        }
+    </script>
+</head>
+<body>
+    <div id="outer">
+        <lable><input type="text" value="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15" /><span>输入数字求和，数字之间用半角","号分隔</span></lable>
+        <p><button>求和</button></p>
+        <strong class="sum"></strong>
+    </div>
+</body>
+</html>
+
 
