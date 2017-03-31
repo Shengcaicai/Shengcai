@@ -1,1 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百度输入法</title>
+    <style>
+        body,ul,li,button{margin:0;padding:0;}
+        body{font:12px/1.5 Tahoma;}
 
+        button{cursor:pointer;}
+        #outer{margin:10px auto;width:70px;}
+        #box{border:1px solid #9a99ff;margin-top:5px;display:none;}
+        #box li{width:100%;vertical-align: top;display:inline-block;line-height:24px;}
+        #close{border-top:1px solid #9a99ff;}
+        ul{list-style: none;}
+        a{text-decoration: none;color:#00c;padding:0 5px;display:block;}
+        a:hover{background:#d9e1f6;;}
+    </style>
+    <script>
+        window.onload=function(){
+            var oBut=document.getElementsByTagName("button")[0];
+            var oBox=document.getElementById("box");
+            var oClo=document.getElementById("close");
+            var style=oBox.style;
+
+
+            oBut.onclick=function(){
+               style.display = style.display == "block"? "none" : "block";
+            };
+            oClo.onclick=function(){
+               style.display="none";
+            }
+        }
+    </script>
+</head>
+<body>
+  <div id="outer">
+      <button>输入法</button>
+      <div id="box">
+          <ul>
+              <li><a href="javascript:;">手写</a></li>
+              <li><a href="javascript:;">拼音</a></li>
+              <li id="close"><a href="javascript:;">关闭</a></li>
+          </ul>
+      </div>
+  </div>
+
+</body>
