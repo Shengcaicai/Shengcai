@@ -18,17 +18,17 @@
     </style>
     <script>
         window.onload=function(){
-            var oBut=document.getElementsByTagName("button")[0];
-            var oBox=document.getElementById("box");
-            var oClo=document.getElementById("close");
-            var style=oBox.style;
+            var oBut = document.getElementsByTagName("button")[0];
+            var oBox = document.getElementById("box");
+            var style = oBox.style;
+            var oClo = document.getElementById("close");
 
-
-            oBut.onclick=function(){
-               style.display = style.display == "block"? "none" : "block";
+            oBut.onclick = function(){
+                style.display = style.display == "block"? "none" : "block";
             };
-            oClo.onclick=function(){
-               style.display="none";
+
+            oClo.onclick = function(){
+                style.display = "none";
             }
         }
     </script>
