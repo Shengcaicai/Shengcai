@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复选框 全选／不选</title>
+    <style>
+        body,ul,li{padding:0;margin:0;}
+        body{font:12px/1.5 Tahoma;}
+        dl{width:126px;margin:10px auto;border:1px solid grey;border-radius:3px;background-color:#f5eeee;}
+        dt{ margin: 16px 2px 2px 3px;border-bottom: 1px solid #666;padding-bottom: 10px;}
+        dt a{text-decoration: none;margin-left:7px;}
+        .center{text-align: center;}
+        dd p {margin-left: -36px;}
+    </style>
+    <script>
+        window.onload = function(){
+            var oA = document.getElementsByTagName("a")[0];
+            var oStr = document.getElementsByTagName("strong")[0];
+            var oInp = document.getElementsByTagName("input");
+            var isCheckAll = function(){
+                for(var i=1,n=0;i<oInp.length;i++){
+                    //统计选中的个数
+                    oInp[i].checked && n++
+                }
+                    oInp[0].checked = n == oInp.length-1;
+                    oStr.innerHTML = oInp[0].checked? "全不选" : "全选";
+                };
+
+
+            //全选/全不选
+            oInp[0].onclick = function(){
+                for(var i=1;i<oInp.length;i++){
+                    oInp[i].checked = this.checked;
+                }
+                isCheckAll();
+            };
+
+            //反选
+            oA.onclick = function(){
+                for(var i=1;i<oInp.length;i++){
+                    oInp[i].checked = !oInp[i].checked;
+                }
+                isCheckAll();
+            };
+
+            //根据复选个数更新全选复选框
+            for(var i=1;i<oInp.length;i++){
+                oInp[i].onclick = function(){
+                    isCheckAll();
+                }
+                }
+            }
+
+
+    </script>
+</head>
+<body>
+      <dl>
+          <dt><input type="checkbox"><strong>全选</strong><a href="javascript:;">反选</a></dt>
+          <dd>
+              <p><input type="checkbox"><lable>选项（一）</lable></p>
+              <p><input type="checkbox"><lable>选项（二）</lable></p>
+              <p><input type="checkbox"><lable>选项（三）</lable></p>
+              <p><input type="checkbox"><lable>选项（四）</lable></p>
+              <p><input type="checkbox"><lable>选项（五）</lable></p>
+              <p><input type="checkbox"><lable>选项（六）</lable></p>
+              <p><input type="checkbox"><lable>选项（七）</lable></p>
+              <p><input type="checkbox"><lable>选项（八）</lable></p>
+              <p><input type="checkbox"><lable>选项（九）</lable></p>
+              <p><input type="checkbox"><lable>选项（十）</lable></p>
+          </dd>
+      </dl>
+      <p class="center">1、切换全选/全不选文字；2、根据选中个数更新全选框状态；</p>
+</body>
+</html>

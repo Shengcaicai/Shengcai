@@ -2,24 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08deb6b0-8cda-4caf-a897-b9dd77f0e7e5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/section17/image/1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/section17/image/big_1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/section17/image/small_1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/section17/image/small_10.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/section17/image/small_11.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/section17/image/small_2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/section17/image/small_3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/section17/image/small_4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/section17/image/small_5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/section17/image/small_6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/section17/image/small_7.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/section17/image/small_8.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/section17/image/small_9 (1).jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/section17/image/small_9.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/section17/9.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/section18/11.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/section16/4.html" afterPath="$PROJECT_DIR$/section16/4.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/section17/1.html" afterPath="$PROJECT_DIR$/section17/1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/section17/9.html" afterPath="$PROJECT_DIR$/section17/9.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -37,40 +22,13 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="4.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/section16/4.html">
+      <file leaf-file-name="11.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/section18/11.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="35" />
+            <state relative-caret-position="703">
+              <caret line="55" column="7" lean-forward="true" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="1.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/section17/1.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="33" column="13" lean-forward="true" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="9.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/section17/9.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="733">
-              <caret line="51" column="7" lean-forward="true" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="1.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/section17/image/1.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
           </provider>
         </entry>
       </file>
@@ -103,6 +61,7 @@
         <option value="$PROJECT_DIR$/section17/1.html" />
         <option value="$PROJECT_DIR$/section17/image/7.html" />
         <option value="$PROJECT_DIR$/section17/9.html" />
+        <option value="$PROJECT_DIR$/section18/11.html" />
       </list>
     </option>
   </component>
@@ -144,7 +103,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="section17" />
+              <option name="myItemId" value="section18" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -256,12 +215,12 @@
       <workItem from="1491406614941" duration="175000" />
       <workItem from="1491468630564" duration="11136000" />
       <workItem from="1491484115988" duration="981000" />
-      <workItem from="1491813916796" duration="14401000" />
+      <workItem from="1491813916796" duration="20603000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27644000" />
+    <option name="totallyTimeSpent" value="33846000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -540,14 +499,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/section17/1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="33" column="13" lean-forward="true" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/section17/image/7.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -558,8 +509,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/section17/9.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="733">
-          <caret line="51" column="7" lean-forward="true" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
+        <state relative-caret-position="613">
+          <caret line="42" column="67" lean-forward="true" selection-start-line="42" selection-start-column="67" selection-end-line="42" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/section17/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="19" column="12" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/section18/11.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="55" column="7" lean-forward="true" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
           <folding />
         </state>
       </provider>
