@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>parseInp 求和</title>
+    <style>
+        .box{text-align:center;margin:20px auto;}
+    </style>
+    <script>
+        window.onload = function(){
+            var oSpan = document.getElementsByTagName("span")[0];
+            var oInp = document.getElementsByTagName("input");
+
+            for(var i = 0;i < oInp.length - 1;i++){
+                oInp[i].onkeyup = function(){
+                    this.value = this.value.replace(/[^\d]/,"");
+                }
+            }
+
+            oInp[2].onclick = function(){
+                (oInp[0].value == "" || oInp[1].value == "")? alert("请输入数字!") : oSpan.innerHTML = parseInt(oInp[0].value) + parseInt(oInp[1].value);
+            }
+        };
+
+
+    </script>
+</head>
+<body>
+   <div class="box">
+       <input type="text"> <strong>+</strong> <input type="text"> <strong>=</strong> <span> ? </span> <input type="button" value="求和">
+   </div>
+
+</body>
+</html>
