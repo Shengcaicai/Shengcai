@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简单网页时钟</title>
+    <style>
+        #box{
+            width: 300px;
+            height: 86px;
+            background: #000;
+            text-align: center;
+            margin: 10px auto;
+            color: #fff;
+        }
+
+      span{
+          color: #000;
+          line-height: 80px;
+          border: 2px solid #ccc;
+          padding: 0 15px;
+          background: #fff;
+          margin: 0 10px;
+      }
+    </style>
+    <script>
+        window.onload = function(){
+            var oBox = document.getElementById("box");
+            var aSpan = oBox.getElementsByTagName("span");
+
+            //每一秒钟循环执行getTimes函数
+            setInterval(getTimes,1000);
+            getTimes();
+            function getTimes(){
+                var oDate = new Date();
+                var aDate =[oDate.getHours(), oDate.getMinutes(), oDate.getSeconds()];
+                //format 日期格式化
+                for(var i in aDate) aSpan[i].innerHTML = format(aDate[i]);
+            }
+
+            function format(a){
+                return a.toString().replace(/^(\d)$/,"0$1");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="box">
+       <span></span>点<span></span>分<span></span>秒
+    </div>
+</body>
+</html>

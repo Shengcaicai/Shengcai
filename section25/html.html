@@ -3,8 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <title>网页计算器</title>
+    <style>
+        .cal{text-align:center;
+            margin:20px auto;
+            width:400px;
+            height:600px;
+            border:1px solid #ccc;
+        }
+
+        .cal p{height: 22px;
+            background: #000;
+            margin-top: 0;
+            color: #fff;
+            font-size: 11px;
+            text-align: right;
+        }
+        .f-text{
+            height: 100px;
+            background: #dae478;
+            text-align: right;
+            width: 100%;
+            border: 0;
+            margin-top: -12px;
+            margin-left: -1px;
+            font-size: 30px;
+        }
+
+        .cal ul{
+            margin-top: 0;
+            margin-left: -1px;
+            background: #ccc;
+        }
+
+
+        .btn-1 ul  li{
+            display:inline;
+            padding-right:10px;
+            list-style: none;
+            float:left;
+            width:60px;
+            height:40px;
+            margin:17px 10px 0 0;
+        }
+
+        .btn-1 ul li a{
+            text-align: center;
+            width:60px;
+            height:40px;
+            display:block;
+            line-height:41px;
+        }
+
+        .calc ul li a:hover{background-position:-63px 0;}
+
+
+    </style>
 </head>
 <body>
-    
+    <div class="cal">
+        <p>By - Ferris QQ:21314130</p>
+        <input type="text" class="f-text" maxLength="9" value="0"/>
+        <ul>
+            <li class="btn-1"><a href="javascript:void(0)">c</a></li>
+            <li class="btn-1"><a href="javascript:void(0)">%</a></li>
+            <li class="btn-1"><a href="javascript:void(0)">+</a></li>
+            <li class="btn-1"><a href="javascript:void(0)">x</a></li>
+
+            <li><a href="javascript:void(0)">7</a></li>
+            <li><a href="javascript:void(0)">8</a></li>
+            <li><a href="javascript:void(0)">9</a></li>
+
+            <li class="btn-1"><a href="javascript:void(0)">-</a></li>
+
+            <li><a href="javascript:void(0)">4</a></li>
+            <li><a href="javascript:void(0)">5</a></li>
+            <li><a href="javascript:void(0)">6</a></li>
+
+            <li class="btn-1"><a href="javascript:void(0)">+</a></li>
+
+            <li><a href="javascript:void(0)">1</a></li>
+            <li><a href="javascript:void(0)">2</a></li>
+            <li><a href="javascript:void(0)">3</a></li>
+
+            <li class="btn-2"><a href="javascript:void(0)">=</a></li>
+            <li class="btn-3"><a href="javascript:void(0)">0</a></li>
+
+            <li><a href="javascript:void(0)">.</a></li>
+        </ul>
+        <input id="dormula"  type="text" readonly="readonly" value=""/>
+    </div>
 </body>
 </html>
