@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>页面加载累加 是否为一</title>
+    <title>页面加载累加一</title>
+    <style>
+        body{text-align: center;margin:20px;auto;font-size:40px;}
+    </style>
+    <script>
+        window.onload = function(){
+            var i = 10;
+            var oBody = document.body;
+            setInterval(updateNum, 1000);
+            function updateNum(){
+                oBody.innerHTML = i++
+            }
+        }
+
+
+    </script>
 </head>
 <body>
-    
 </body>
 </html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{text-align: center;margin:20px auto;}
+        .text{width:60px;}
+    </style>
+    <script>
+
+
+        window.onload = function() {
+            var oInp = document.getElementsByTagName("input");
+            var i = 0;
+
+            oInp[0].onkeyup = function () {
+                this.value = this.value.replace(/[^\d]/, "")
+            };
+
+            //^(\d)$就是0-9的任意一个数字，^表示以...开头，\d表示0-9的数字，$表示以...结尾，正则对象有方法test，参数是待验证的字符串
+            oInp[1].onclick = function () {
+                (oInp[0].value == "") ?
+                    alert("请输入数字！") :
+                    alert(/^\d{2}$/.test(parseInt(oInp[0].value)) ? "√ 是两位数" : "这是" + oInp[0].value.length + "位数");
+            }
+        }
+
+    </script>
+</head>
+<body>
+   <div class="box">
+       <input type="text" class="text"/>
+       <input type="button"  value="是否为两位数"/>
+   </div>
+</body>
+</html>
+
+
