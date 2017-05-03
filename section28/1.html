@@ -23,7 +23,77 @@
 
 
     <script type="text/javascript">
-        
+        //创建了一个对象get,对象里面有3方法byId byClass byTagName,封装了几个JS的原生方法到了一个对象里方便调用和维护
+            var get = {
+                byId: function(id) {
+                    return document.getElementById(id)
+                },
+                byClass: function(sClass, oParent) {
+                    var aClass = [];
+                    var reClass = new RegExp("(^| )" + sClass + "( |$)");
+                    var aElem = this.byTagName("*", oParent);
+                    for (var i = 0; i < aElem.length; i++) reClass.test(aElem[i].className) && aClass.push(aElem[i]);
+                    return aClass
+                },
+                byTagName: function(elem, obj) {
+                    return (obj || document).getElementsByTagName(elem)
+                }
+            };
+
+            window.onload = function(){
+                var oNav = get.byId("nav");
+                var aLi = get.byTagName("li","oNav");
+                var aSub = get.byClass("subnav","oNav");
+                var oSub = oEm = timer = null;
+                var i = 0;
+
+                for(i = 1,i < aLi.length;i++){
+                    aLi.onmousemover = function(){
+
+                        //隐藏所有子菜单
+                        for(i = 0,i < aSub.length;i++)aSub[i].style.display = "none";
+
+                        //获取该项下的子菜单
+                        oSub = get.byClass("subnav",this)[0];
+
+                        //获取该项下的指示箭头
+                        oEm = get.byTagName("em",this)[0];
+
+                        //显示该项下的子菜单
+                        oSub.style.display = "block";
+
+                        //判断显示区域,offsetWidth是指对象自身的宽度，整型，单位像素（含边线，如滚动条的占用的宽，值会随着内容的输入而不断改变）,
+                        // offsetLeft:获取对象相对于版面或由 offsetParent 属性指定的父坐标的计算左侧位置,判断显示区域,
+                        // this.offsetLeft是本次对象相对oNav的左侧位置是多少
+                        oNav.offsetWidth - this.offsetLeft > oSub.offsetWidth ?
+
+                        //如果在显示范围则居左显示，
+                            // left是获取该dom元素的css，所以如果是固定值则带上'px',
+                            // 可读写offsetLeft 是一个只读属性，返回当前元素左上角相对于 HTMLElement.offsetParent 节点的左边界偏移的像素值。
+                        oSub.style.left = this.offsetLeft + "px" :
+
+                        //超出显示范围则向右显示，即向右对齐
+                        oSub.style.right = 0;
+
+                        //计算指标箭头显示位置
+                        oEm.style.left = this.offsetLeft - oSub.offsetLeft + 50 + "px";
+
+                        //阻止事件冒泡
+                        oSub.onmouseover = function(){
+                            //检测是否接受上层元素的事件的控制。这是一个可读写的布尔值:
+                            // TRUE 不被上层原素的事件控制。
+                            // FALSE 允许被上层元素的事件控制。这是默认值。
+                            (event || window.event).cancelBubble = true;
+                            clearTimeout(timer);
+                        };
+
+                        aLi.onmouseout = function(){
+                            timer = setTimeout(function(){
+                                oSub.style.display = "none";
+                            },300)
+                        }
+                    }
+                };
     </script>
 </head>
 
