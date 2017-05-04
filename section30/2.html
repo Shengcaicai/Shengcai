@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自动改变方向-幻灯片效果</title>
+    <style>
+        body,ul,li,div{padding:0;margin:0;}
+        body{background:#000;text-align: center;font:12px/20px Arial}
+        ul{list-style-type: none;}
+        #box{position:relative;border:8px solid #fff;border-radius:5px;margin:10px auto;width:490px;height:170px;}
+        #box .list{position:relative;border:1px solid #ccc;width:490px;height:170px;overflow:hidden;}
+        #box .list li{position:absolute;top:0;left:0;width:490px;height:170px;opacity:0;filter:alpha(opacity=0);}
+        #box .list li.current{opacity:1;filter:alpha(opacity=100);}
+        #box .count{position:absolute;right:0;color:#fff;bottom:5px;}
+        #box .count li{float:left;cursor:pointer;width:20px;height:20px;background:#F90;border-radius:20px;margin-right:5px;opacity:0.7;filter:alpha(opacity=70);}
+        #box .count li.current{opacity:1;filter:alpha(opacity=100);font-weight:700;background:#f60;}
+    </style>
+
+    <script type="text/javascript">
+        window.onload = function(){
+            var oBox = document.getElementById("box");
+            var oUl = document.getElementsByTagName("ul");
+            var oImg= oUl[0].getElementsByTagName("li");
+            var oNum = oUl[1].getElementsByTagName("li");
+            var timer = play = null;
+            var i = index = 0;
+            var bOrder = true;
+
+
+            //切换按钮
+            for(i = 0; i < oNum.length; i++){
+                oNum[i].index = i;
+                oNum[i].onmouseover = function(){
+                    show(this.index);
+                }
+            }
+
+
+            //鼠标划过关闭定时器
+            oBox.onmouseover = function(){
+                //停止播放函数
+                clearInterval(play);
+            };
+
+
+
+            //鼠标离开启动自动播放
+            oBox.onmouseout = function(){
+                autoPlay();
+            };
+
+
+            //自动播放函数
+            function autoPlay(){
+                play = setInterval(function(){
+                    //判断播放顺序
+                    bOrder ? index++ : index--;
+                    //index从0开始，递增到尾
+                    index <= 0 && (index = 0, bOrder = true);
+                    //index递增至大于尾时，反向index变为从oImg.length-2开始递减至index为0
+                    index >= oImg.length && (index = oImg.length-2, bOrder = false);
+                    show(index);
+                },2000)
+            }
+            //调用函数
+            autoPlay();
+
+
+
+            //图片切换，淡入淡出效果
+            function show(a){
+                index = a;
+                var alpha = 0;
+                for(i = 0;i < oNum.length;i++)oNum[i].className = "";
+                //循环遍历oNum[index],使oNum[i]的className循环变为"current"
+                oNum[index].className = "current";
+                //当className为current时，默认opacity=1，需调用timer函数，使其产生透明度增加至1的渐变效果，而不是直接为1
+                clearInterval(timer);
+
+                //循环遍历图片透明度默认从0开始
+                for(i = 0;i < oImg.length;i++){
+                    oImg[i].style.opacity = 0;
+                    oImg[i].style.filter = "alpha(opacity=0)";
+                }
+
+                timer = setInterval(function(){
+                    alpha += 2;
+                    alpha > 100 && (alpha=100);
+                    oImg[index].style.opacity = alpha/100;
+                    oImg[index].style.filter = "alpha(opacity = " + alpha +")";
+                    alpha == 100 && clearInterval(timer);
+                },20);
+            }
+        };
+
+    </script>
+</head>
+<body>
+<div id="box">
+    <ul class="list">
+        <li class="current"><img src="image/01.jpg" width="490" height="170"／></li>
+        <li><img src="image/02.jpg"  width="490" height="170"／></li>
+        <li><img src="image/03.jpg"  width="490" height="170"／></li>
+        <li><img src="image/04.jpg"  width="490" height="170"／></li>
+        <li><img src="image/05.jpg"  width="490" height="170"／></li>
+    </ul>
+    <ul class="count">
+        <li class="current">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</div>
+</body>
+</html>
